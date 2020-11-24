@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<title>Client</title>
+</head>
+<body>
+	<form name="test_standard" method="POST" action="#">
+		<div class="container mt-5">
+			<h1 style="text-align: center;">Test Standard</h1>
+
+			<div class="row mt-4">
+				<div class="col-6">
+					<div class="form-group">
+						<label>Standard ID</label>
+						<input class="form-control" type="text" name="standard_id" id="standard_id"  required>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="form-group">
+						<label>Standard Name</label>
+						<input class="form-control" type="text" id="standard_name" name="standard_name"  required>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-4">
+				<div class="col-6">
+					<div class="form-group">
+						<label>Description</label>
+						<input class="form-control" type="text" name="description" id="description" required>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="form-group">
+						<label>Public Date</label>
+						<input class="form-control" type="date" id="publish_date" name="publish_date" required>
+					</div>
+				</div>
+			</div>
+			<hr />
+			<div class="row">
+				<div class="col-4 offset-4">
+					<input class="form-control btn btn-primary" type="submit" value="Submit">
+				</div>
+			</div>
+		</div>
+	</form>
+</body>
+</html>

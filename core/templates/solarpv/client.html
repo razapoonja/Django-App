@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<title>Client</title>
+</head>
+<body>
+	<form name="register_form" method="POST" action="#">
+		<div class="container mt-5">
+			<h1 style="text-align: center;">Client</h1>
+
+			<div class="row mt-4">
+				<div class="col-6">
+					<div class="form-group">
+						<label>Client ID</label>
+						<input class="form-control" type="text" name="client_id" id="client_id" minlength="6"  required>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="form-group">
+						<label>Client Code</label>
+						<input class="form-control" type="text" id="client_code" name="client_code"  required>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-4">
+				<div class="col-6">
+					<div class="form-group">
+						<label>Client Name</label>
+						<input class="form-control" type="text" name="client_name" id="client_name" required>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="form-group">
+						<label>Client Type</label>
+						<input class="form-control" type="text" id="publish_date" name="publish_date" required>
+					</div>
+				</div>
+			</div>
+			<hr />
+			<div class="row">
+				<div class="col-4 offset-4">
+					<input class="form-control btn btn-primary" type="submit" value="Submit">
+				</div>
+			</div>
+		</div>
+	</form>
+</body>
+</html>

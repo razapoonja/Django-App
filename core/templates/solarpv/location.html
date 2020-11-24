@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<title>Location</title>
+</head>
+<body>
+	<form name="location" method="POST" action="#">
+		<div class="container mt-5">
+			<h1 style="text-align: center;">Location</h1>
+
+			<div class="row mt-4">
+				<div class="col-6">
+					<div class="form-group">
+						<label>Location ID</label>
+						<input class="form-control" type="text" name="location_id"  required>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="form-group">
+						<label>Client ID</label>
+						<select class="form-control" name="client">
+							<option value="c1">Client 1 ID</option>
+							<option value="c2">Client 2 ID</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="row mt-4">
+				<div class="col-6">
+					<div class="form-group">
+						<label>Address 1</label>
+						<input class="form-control" type="text" name="address1" id="address1" required>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="form-group">
+						<label>Address 2</label>
+						<input class="form-control" type="text" name="address2" id="address2" required>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-4">
+				<div class="col-6">
+					<div class="form-group">
+						<label>City</label>
+						<input class="form-control" type="text" name="city" id="city" required>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="form-group">
+						<label>State</label>
+						<input class="form-control" type="text" name="state" id="state" required>
+					</div>
+				</div>
+			</div>
+
+			<div class="row mt-4">
+				<div class="col-6">
+					<div class="form-group">
+						<label>Postal Code</label>
+						<input class="form-control" type="text" name="postal_code" id="postal_code" required>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="form-group">
+						<label>Country</label>
+						<input class="form-control" type="text" name="country" id="country" required>
+					</div>
+				</div>
+			</div>
+
+			<div class="row mt-4">
+				<div class="col-6">
+					<div class="form-group">
+						<label>Phone Number</label>
+						<input class="form-control" type="text" name="phone_number" id="phone_number" required>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="form-group">
+						<label>Fax Number</label>
+						<input class="form-control" type="text" name="fax_number" id="fax_number" required>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-4 offset-4">
+					<input class="form-control btn btn-primary" type="submit" value="Submit" >
+				</div>
+			</div>
+		</div>
+	</form>
+
+</body>
+</html>

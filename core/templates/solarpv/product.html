@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<title>Product</title>
+</head>
+<body>
+	<form name="product" method="POST" action="#">
+		<div class="container mt-5">
+			<h1 style="text-align: center;">Product</h1>
+			<div class="row">
+				<div class="col-4">
+					<div class="form-group">
+						<label>Model Number</label>
+						<input class="form-control" type="text" name="model_number" id="model_number">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="form-group">
+						<label>Name</label>
+						<input class="form-control" type="text" name="name" id="name">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="form-group">
+						<label>Cell Technology</label>
+						<input class="form-control" type="text" name="cell_technology" id="cell_technology">
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-4">
+					<div class="form-group">
+						<label>Cell Manufacturer</label>
+						<input class="form-control" type="text" name="cell_manufacturer" id="cell_manufacturer">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="form-group">
+						<label>Number of cells</label>
+						<input class="form-control" type="text" name="number_of_cells" id="number_of_cells">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="form-group">
+						<label>Number of cells in series</label>
+						<input class="form-control" type="text" name="number_of_cells_in_series" id="number_of_cells_in_series">
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-4">
+					<div class="form-group">
+						<label>Number of series string</label>
+						<input class="form-control" type="text" name="number_of_series_string" id="number_of_series_string">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="form-group">
+						<label>Number of Diodes</label>
+						<input class="form-control" type="number_of_diodes" name="number_of_diodes">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="form-group">
+						<label>Product Length</label>
+						<input class="form-control" type="text" name="product_length" id="product_length">
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-4">
+					<div class="form-group">
+						<label>Product Width</label>
+						<input class="form-control" type="text" name="product_width" id="product_width">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="form-group">
+						<label>Product Weight</label>
+						<input class="form-control" type="product_weight" name="product_weight">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="form-group">
+						<label>Superstrate type</label>
+						<input class="form-control" type="text" name="superstrate_type" id="superstrate_type">
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-4">
+					<div class="form-group">
+						<label>Superstrate manufacturer</label>
+						<input class="form-control" type="text" name="superstrate_manufacturer" id="superstrate_manufacturer">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="form-group">
+						<label>Frame Type</label>
+						<input class="form-control" type="text" name="frame_type" id="frame_type">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="form-group">
+						<label>Frame adhesive</label>
+						<input class="form-control" type="text" name="frame_adhesive" id="frame_adhesive">
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-3">
+					<div class="form-group">
+						<label>Encapsulant manufacturer</label>
+						<input class="form-control" type="text" name="encapsulant_manufacturer" id="encapsulant_manufacturer">
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="form-group">
+						<label>Encapsulant type</label>
+						<input class="form-control" type="text" name="encapsulant_type" id="encapsulant_type">
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="form-group">
+						<label>Junction Box Type</label>
+						<input class="form-control" type="text" name="junction_box_type" id="junction_box_type">
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="form-group">
+						<label>Junction box manufacturer</label>
+						<input class="form-control" type="text" name="Junction_box_manufacturer" id="Junction_box_manufacturer">
+					</div>
+				</div>
+			</div>
+
+            <hr />
+			<div class="row">
+				<div class="col-4 offset-4">
+					<input class="form-control btn btn-primary" type="submit" value="Submit">
+				</div>
+			</div>
+		</div>
+	</form>
+
+	<script type="text/javascript">
+		function CheckPassword(inputtxt) {
+			var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{2,8}$/;
+
+			if(! inputtxt.value.match(passw)){
+				alert('Password must be at most 8 characters long comprising at least a digit, a lowercase letter, and an uppercase letter');
+
+				return false;
+			}
+
+			return true;
+		}
+	</script>
+</body>
+</html>
