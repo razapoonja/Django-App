@@ -12,7 +12,7 @@ class Client(models.Model):
 
 
 class UserManager(BaseUserManager):
-    def create_user(self,first_name, last_name, email, username, password=None):
+    def create_user(self, first_name, last_name, email, username, password=None):
         if not email:
             raise ValueError("Users must have an email address")
         if not username:
@@ -65,8 +65,8 @@ class User(AbstractBaseUser):
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
 
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username', 'first_name', 'last_name', ]
+    USERNAME_FIELD = 'username'
+    REQUIRED_FIELDS = ['email', 'first_name', 'last_name', ]
 
     objects = UserManager()
 
