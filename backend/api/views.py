@@ -1,6 +1,6 @@
 from rest_framework import generics
-from ..models import Certificate
-from .serializers import CertificateSerializer
+from ..models import Certificate, Client
+from .serializers import CertificateSerializer, ClientSerializer
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters
 
@@ -11,22 +11,6 @@ class CertificateListView(generics.ListAPIView):
     filter_backends = [filters.SearchFilter]
     filterset_fields = ['certificate_number']
 
-
-class CertificateDetailView(generics.RetrieveAPIView):
-    queryset = Certificate.objects.all() 
-    serializer_class = CertificateSerializer
-
-
-class CertificateCreatelView(generics.CreateAPIView):
-    queryset = Certificate.objects.all() 
-    serializer_class = CertificateSerializer
-
-
-class CertificateUpdateView(generics.UpdateAPIView):
-    queryset = Certificate.objects.all() 
-    serializer_class = CertificateSerializer
-
-
-class CertificateDeleteView(generics.DestroyAPIView):
-    queryset = Certificate.objects.all() 
-    serializer_class = CertificateSerializer
+class ClientListView(generics.ListAPIView):
+    queryset = Client.objects.all() 
+    serializer_class = ClientSerializer

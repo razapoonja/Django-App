@@ -12,7 +12,7 @@ class Client(models.Model):
 
 
 class UserManager(BaseUserManager):
-    def create_user(self, first_name, middle_name, last_name,  company, job_title, office_phone, cell_phone, appellation, email, username, password=None):
+    def create_user(self, first_name, middle_name, last_name, username, email, password, company, job_title, office_phone, cell_phone, appellation):
         if not email:
             raise ValueError("Users must have an email address")
         if not username:
@@ -22,8 +22,8 @@ class UserManager(BaseUserManager):
             first_name=first_name,
             last_name=last_name,
             middle_name=middle_name,
-            email=self.normalize_email(email),
             username=username,
+            email=self.normalize_email(email),
             company=company,
             job_title=job_title,
             office_phone=office_phone,

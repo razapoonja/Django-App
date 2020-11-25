@@ -49,12 +49,18 @@
                   </li>
                </ul>
                <ul class="navbar-nav my-2 my-lg-0">
-                  <li class="nav-item">
-                     <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="#" data-toggle="modal" data-target="#registerModal">Register</a>
-                  </li>
+                  {% if user.is_authenticated %}
+                     <li class="nav-item">
+                        <a id="logout" class="nav-link" href="#">Logout</a>
+                     </li>
+                  {% else %}
+                     <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#registerModal">Register</a>
+                     </li>
+                  {% endif %}
 
                   <li class="nav-item ml-5">
                      <a class="nav-link" href="#" data-toggle="modal" data-target="#registerModal">
@@ -244,7 +250,9 @@
                            <div class="col-4">
                               <div class="form-group">
                                  <label>Company</label>
-                                 <input class="form-control" type="text" name="company">
+                                 <select class="form-control" id="company" name="company" required>
+                                    <option value="">Select Company</option>
+                                 </select>
                               </div>
                            </div>
                            <div class="col-4">
@@ -256,7 +264,8 @@
                            <div class="col-4">
                               <div class="form-group">
                                  <label>Appellation</label>
-                                 <select class="form-control" name="appellation">
+                                 <select class="form-control" name="appellation" required>
+                                    <option value="">Select Appellation</option>
                                     <option value="Dr.">Dr.</option>
                                     <option value="Mr.">Mr.</option>
                                     <option value="Ms.">Ms.</option>
@@ -315,6 +324,32 @@
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
       <script>
+            $(function () {
+               $('#logout').on('click', function () {
+                  $.ajax({
+                     type: "POST",
+                     url: '/api/logout/',
+
+                     success: function(data)
+                     {
+                        window.location.href = '/';
+                     }
+                  });
+               });
+            });
+         
+            $.ajax({
+               type: "GET",
+               url: '/api/clients/',
+
+               success: function(data)
+               {
+                  $.each(data, function(i, item) {
+                     $('#company').append('<option value="'+data[i].client_name+'">'+data[i].client_name+'</option>');
+                  });
+               }
+            });
+
             $("#register_form").submit(function(e) {
                 e.preventDefault();
 
@@ -328,7 +363,6 @@
                     success: function(data)
                     {
                         alert('You are now registered');
-
                         window.location.href = '/';
                     }
                 });
@@ -346,8 +380,7 @@
                     data: form.serialize(),
                     success: function(data)
                     {
-                        console.log(data);
-                        // window.location.href = '/';
+                        window.location.href = '/';
                     }
                 });
             });
