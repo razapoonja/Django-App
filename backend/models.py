@@ -12,7 +12,7 @@ class Client(models.Model):
 
 
 class UserManager(BaseUserManager):
-    def create_user(self, first_name, last_name, email, username, password=None):
+    def create_user(self, first_name, middle_name, last_name,  company, job_title, office_phone, cell_phone, appellation, email, username, password=None):
         if not email:
             raise ValueError("Users must have an email address")
         if not username:
@@ -21,8 +21,14 @@ class UserManager(BaseUserManager):
         user = self.model(
             first_name=first_name,
             last_name=last_name,
+            middle_name=middle_name,
             email=self.normalize_email(email),
-            username=username
+            username=username,
+            company=company,
+            job_title=job_title,
+            office_phone=office_phone,
+            cell_phone=cell_phone,
+            appellation=appellation
         )
 
         user.set_password(password)
@@ -30,13 +36,19 @@ class UserManager(BaseUserManager):
 
         return user
     
-    def create_superuser(self, first_name, last_name, email, username, password):
+    def create_superuser(self, first_name, middle_name, last_name, email, username, password, company, job_title, office_phone, cell_phone, appellation):
         user = self.create_user(
             first_name=first_name,
+            middle_name=middle_name,
             last_name=last_name,
             email=self.normalize_email(email),
             password=password,
-            username=username
+            username=username,
+            company=company,
+            job_title=job_title,
+            office_phone=office_phone,
+            cell_phone=cell_phone,
+            appellation=appellation
         )
 
         user.is_admin = True

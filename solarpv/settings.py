@@ -14,6 +14,7 @@ INSTALLED_APPS = [
     'backend',
     'rest_framework',
     'knox',
+    'django_filters',
     
     'django.contrib.admin',
     'django.contrib.auth',
